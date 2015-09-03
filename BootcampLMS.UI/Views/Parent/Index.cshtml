@@ -1,0 +1,33 @@
+﻿@model BootcampLMS.UI.Models.ParentDashboardVM
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Parent Dashboard</h2>
+
+<h3>My Students</h3>
+
+<div class="col-xs-12">
+    <div class="col-xs-8">
+        <div class="panel panel-default">
+            <div class="panel panel-body">
+
+                @foreach (var item in Model.myListOfKids)
+                {
+                    <table class="table table-striped">
+                        <tr>
+                            <td>
+                                <h4>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</h4>
+                            </td>
+                            <td>
+                                <button class="btn btn-default">@Html.ActionLink("View Grades", "Grades", "Parent", new { userid = item.UserId }, null)</button>
+                            </td>
+                        </tr>
+                    </table>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+﻿@model BootcampLMS.UI.Models.CourseVM
+
+@{
+    ViewBag.Title = "AddClass";
+}
+
+@Html.ActionLink("Information", "Information", "Teacher", new { id = Model.CourseId}, null) | @Html.ActionLink("Roster", "Roster", "Teacher", new { id = Model.CourseId }, null ) | @Html.ActionLink("Gradebook", "Gradebook", "Teacher", new { courseid = Model.CourseId }, null)
+
+<div class="col-xs-12">
+@using (Html.BeginForm("AddCourse", "Teacher", FormMethod.Post))
+{
+    <div class="col-xs-6">
+        <h3>Information</h3>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="pull-right form-group vspace-right">
+                        <label>Archive</label>
+                        @Html.CheckBoxFor(m => m.IsArchived)
+                    </div>
+                    <div class="pull-left form-group vspace-left">
+                        <label>Class Name</label>
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                    </div>
+                    <div align="center" class="form-group col-xs-4">
+                        <label>Grade Level</label>
+                        @Html.DropDownListFor(m => m.GradeLevel, EnumHelper.GetSelectList(typeof(BootcampLMS.UI.Models.GradeLevels)), new { @class = "form-control" })
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="pull-right form-group vspace-right">
+                        <label>Description</label>
+                        @Html.TextAreaFor(m => m.CourseDescription, new { @class = "form-control" })
+                    </div>
+                    <div class="pull-left form-group vspace-left">
+                        <label>Subject</label>
+                        @Html.TextBoxFor(m => m.Department, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="control-label vspace-left">Start Date</label>
+                    <div class="pull-left form-group vspace-left">
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                <div class='input-group date datetimepicker'>
+                                    @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control" })
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row vspace-left">
+                        <label class="control-label">End Date</label>
+                        <div class="pull-left form-group">
+                            <div class="form-group">
+                                <div class="col-sm-5">
+                                    <div class='input-group date datetimepicker'>
+                                        @Html.TextBoxFor(m => m.EndDate, new { @class = "form-control" })
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    @Html.ActionLink("Cancel", "Index", "Teacher")
+                    <button class="btn btn-success vspace-left" type="submit">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="col-xs-6">
+    <h3>Analytics</h3>
+        @{ Html.RenderPartial("AnalView", Model.MyAnalModel); }
+    
+</div>
+</div>
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            $('.datetimepicker').datetimepicker();
+        });
+    </script>
+}

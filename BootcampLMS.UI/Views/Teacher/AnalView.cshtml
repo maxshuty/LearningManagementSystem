@@ -1,0 +1,32 @@
+﻿@model BootcampLMS.Models.AnalyticsModel
+
+<div class="col-xs-6">
+    <div class="panel panel-default">
+        <div class="panel panel-body">
+            <div>
+                Total Students: @Model.MyItemses.Count
+            </div>
+            <div>
+                By Grade:  A-@Model.AStudents
+            </div>
+            <div>
+                <br />
+                <div class="vspace-2xtabbed-left">
+                    B-@Model.BStudents
+                </div>
+                <br />
+                <div class="vspace-2xtabbed-left">
+                    C-@Model.CStudents
+                </div>
+                <br />
+                <div class="vspace-2xtabbed-left">
+                    D-@Model.DStudents
+                </div>
+                <br />
+                <div class="vspace-2xtabbed-left">
+                    F-@Model.FStudents
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@model BootcampLMS.UI.Models.StudentDashboardVM
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Student Dashboard</h2>
+<h3 class="vspace-2x-left">My Grades</h3>
+
+<div class="col-xs-12">
+    <div class="col-xs-8">
+        <div class="panel panel-default">
+            <div class="panel panel-body">
+
+                @foreach (var item in Model.myTableItemList)
+                {
+                    <table class="table table-bordered table-hover table-striped">
+                        <tr>
+                            <td>
+                                <h4>@Html.DisplayFor(model => item.CourseName)</h4>
+                            </td>
+                            <td>
+                                <h4>@Html.DisplayFor(model => item.PercentGrade)%</h4>
+                            </td>
+                            <td>
+                                <div align="center">
+                                    <button class="btn btn-default"> @Html.ActionLink("View Grades", "ViewGrades", "Student", new { courseid = item.CourseId, userid = Model.UserId }, null)</button>
+                                </div>
+                                     </td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿@using System
+@using System.Collections.Concurrent
+@using System.Linq
+@model BootcampLMS.UI.Models.TeacherDashboardViewModel
+@{
+    ViewBag.Title = "TeacherDashboard";
+}
+
+<h2 align="center">Teacher Dashboard</h2>
+<h3>My Classes</h3>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="vspace-bottom">
+            <div class="pull-right">
+                @Html.ActionLink(String.Format("Current {0}", Model.Current), "Index")
+                -
+                @Html.ActionLink(String.Format("Archived {0}", Model.Archived), "Index")
+            </div>
+            <div>
+                @Html.ActionLink("Add Class", "Add", null, new {@class = "btn btn-success"})
+            </div>
+        </div>
+        @if (Model != null)
+        {
+           if (Model.Courses.Any())
+             {
+                 <div class="list-group">
+                     @foreach (var course in Model.Courses)
+                     {
+                         <a href="@Url.Action("Information", new {id = course.CourseId})" class="list-group-item">
+                             <span class="pull-right">@course.StudentCount student(s)</span>
+                             <span>@course.Name</span>
+                         </a>
+                         @Html.ActionLink("Roster", "Roster", "Teacher", new{id = course.CourseId}, null)
+                     }
+                 </div>
+             }
+             else
+             {
+                 <p class="text-center">There are not any courses to display with the current settings.</p>
+             }
+        }
+    </div>
+</div>

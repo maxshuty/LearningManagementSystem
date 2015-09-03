@@ -1,0 +1,10 @@
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\bin\Debug\BootcampLMS.Data.dll
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\bin\Debug\BootcampLMS.Data.pdb
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\bin\Debug\BootcampLMS.Models.dll
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\bin\Debug\Dapper.dll
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\bin\Debug\BootcampLMS.Models.pdb
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\bin\Debug\Dapper.pdb
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\bin\Debug\Dapper.xml
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\obj\Debug\BootcampLMS.Data.csprojResolveAssemblyReference.cache
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\obj\Debug\BootcampLMS.Data.dll
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\obj\Debug\BootcampLMS.Data.pdb

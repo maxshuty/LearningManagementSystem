@@ -1,0 +1,46 @@
+﻿@model BootcampLMS.Models.Course
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<div>
+@using (Html.BeginForm("Edit", "DevCourse", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CourseDescription)
+        @Html.TextAreaFor(m => m.CourseDescription)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Department)
+        @Html.TextBoxFor(m => m.Department)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GradeLevel)
+        @Html.TextBoxFor(m => m.GradeLevel)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.TeacherId)
+        @Html.DropDownListFor(m => m.TeacherId, new SelectList(BootcampLMS.UI.Controllers.DevCourseController.AllTeacherIds), new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StartDate)
+        @Html.TextBoxFor(m => m.StartDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.EndDate)
+        @Html.TextBoxFor(m => m.EndDate)
+    </div>
+    @Html.HiddenFor(m => m.CourseId)
+    <div class="form-control">
+        <button type="submit" class="btn">Click me hard</button>
+    </div>
+
+}
+</div>

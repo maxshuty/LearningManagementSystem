@@ -1,0 +1,24 @@
+﻿@model BootcampLMS.Models.ParentStudent
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+<div>
+    @using (Html.BeginForm("Add", "DevParentStudent", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.ParentId)
+            @Html.DropDownListFor(m => m.ParentId, new SelectList(BootcampLMS.UI.Controllers.DevParentStudentController.MyListUserIds, new { @class = "form-control" }))
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.StudentId)
+            @Html.DropDownListFor(m => m.StudentId, new SelectList(BootcampLMS.UI.Controllers.DevParentStudentController.MyListUserIds, new { @class = "form-control" }))
+        </div>
+        <div class="form-control">
+            <button type="submit" class="btn">Click me hard</button>
+        </div>
+    }
+</div>

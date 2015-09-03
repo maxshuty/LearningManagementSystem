@@ -1,0 +1,21 @@
+﻿@using BootcampLMS.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (Model != null)
+{
+    foreach (var assignment in Model)
+    {
+        <div>@assignment.CourseId</div>
+        <div>@assignment.Name</div>
+        <div>@assignment.AssignmentDescription</div>
+        <div>@assignment.DueDate</div>
+        <div>@assignment.PointsPossible</div>
+        <div>@Html.ActionLink("Delete", "Delete", "DevAssignment", new { id = @assignment.AssignmentId }, new { @class = "btn btn-danger" })</div>
+        <div>@Html.ActionLink("Edit", "Edit", "DevAssignment", new { id = @assignment.AssignmentId }, new { @class = "btn btn-primary" })</div>
+        <hr />
+    }
+}

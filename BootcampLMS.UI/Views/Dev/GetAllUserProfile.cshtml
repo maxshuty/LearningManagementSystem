@@ -1,0 +1,12 @@
+﻿@model List<BootcampLMS.Models.UserProfile>
+
+@foreach (var user in Model)
+{
+    <div>@user.UserId</div>
+    <div>@user.FirstName @user.LastName</div>
+    <div>Grade Level: @user.GradeLevel</div>
+    <div>Requested Role: @user.RequestedRole</div>
+    <div>@Html.ActionLink("Edit", "EditUserById", "Dev", new {id = @user.UserId}, new {@class = "btn btn-success"})</div>
+    <div>@Html.ActionLink("Admin Details", "Details", "Dev", new { id = @user.UserId }, new { @class = "btn btn-danger" })</div>
+    <hr/>
+}

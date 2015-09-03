@@ -1,0 +1,19 @@
+﻿@model List<BootcampLMS.Models.AssignmentTracker>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>AssTracker Index</h2>
+
+@if (Model != null)
+{
+    foreach (var assignment in Model)
+    {
+        <div>@assignment.AssignmentId</div>
+        <div>@assignment.RosterId</div>
+        <div>@assignment.EarnedPoints</div>
+        <div>@Html.ActionLink("Delete", "Delete", "DevAssTracker", new { id = @assignment.Id }, new { @class = "btn btn-danger" })</div>
+        <div>@Html.ActionLink("Edit", "Edit", "DevAssTracker", new { id = @assignment.Id }, new { @class = "btn btn-primary" })</div>
+        <hr />
+    }
+}

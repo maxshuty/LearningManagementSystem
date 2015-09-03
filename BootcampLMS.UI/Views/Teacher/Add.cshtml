@@ -1,0 +1,87 @@
+﻿@using BootcampLMS.UI.Models
+@model BootcampLMS.Models.Course
+
+@{
+    ViewBag.Title = "AddCourse";
+}
+
+<h2>Add Course</h2>
+
+        <div class="col-xs-12">
+            <div class="col-xs-5">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        @using (Html.BeginForm("Add", "Teacher", FormMethod.Post))
+                        {
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name)
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.CourseDescription)
+                                @Html.TextAreaFor(m => m.CourseDescription, new { @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Department)
+                                @Html.TextBoxFor(m => m.Department, new { @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.GradeLevel)
+                                @Html.DropDownListFor(m => m.GradeLevel, EnumHelper.GetSelectList(typeof(BootcampLMS.UI.Models.GradeLevels)), new { @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.TeacherId)
+                                @Html.DropDownListFor(m => m.TeacherId, UiHelper.Teachers, new { @class = "form-control" })
+                            </div>
+
+                            <div class="row">
+                                <label class="control-label vspace-left">Start Date</label>
+                                <div class="pull-left form-group vspace-left">
+                                    <div class="form-group">
+                                        <div class="col-sm-7">
+                                            <div class='input-group date datetimepicker'>
+                                                @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control" })
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row vspace-left">
+                                    <label class="control-label">End Date</label>
+                                    <div class="pull-left form-group">
+                                        <div class="form-group">
+                                            <div class="col-sm-7">
+                                                <div class='input-group date datetimepicker'>
+                                                    @Html.TextBoxFor(m => m.EndDate, new { @class = "form-control" })
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Save</button>
+                        }
+                    </div>
+                </div>
+            </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            $('.datetimepicker').datetimepicker();
+        });
+    </script>
+}

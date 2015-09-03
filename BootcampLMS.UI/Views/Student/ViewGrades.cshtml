@@ -1,0 +1,29 @@
+﻿@using BootcampLMS.UI.Models
+@model List<AssignmentViewModel>
+
+@{
+    ViewBag.Title = "ViewGrades";
+}
+
+<h2>ViewGrades</h2>
+
+<div class="col-xs-12">
+
+    @foreach (var m in Model)
+    {
+         <div class="col-xs-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 align="center">@m.AssignmentName</h3>
+                    <br/>
+                    <div class="pull-right vspace-right">
+                        <h4>@m.GetLetterGrade()</h4>
+                    </div>
+                    <div class="pull-left vspace-left">
+                        <h4>@m.Grade%</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,28 @@
+﻿@model BootcampLMS.Models.Roster
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+<div>
+    @using (Html.BeginForm("Add", "DevRoster", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.CourseId)
+            @Html.DropDownListFor(m => m.CourseId, new SelectList(BootcampLMS.UI.Controllers.DevRosterController.AllCourseIds, new { @class = "form-control" }))
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserId)
+            @Html.DropDownListFor(m => m.UserId, new SelectList(BootcampLMS.UI.Controllers.DevRosterController.AllUserIds, new { @class = "form-control" }))
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.IsActive)
+            @Html.CheckBoxFor(m => m.IsActive)
+        </div>
+        <div class="form-control">
+            <button type="submit" class="btn">Click me hard</button>
+        </div>
+    }
+</div>

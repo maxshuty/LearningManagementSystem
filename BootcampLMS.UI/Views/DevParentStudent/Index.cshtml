@@ -1,0 +1,17 @@
+﻿@model List<BootcampLMS.Models.ParentStudent>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Parent/Student Index</h2>
+
+@if (Model != null)
+{
+    foreach (var ParentStudent in Model)
+    {
+        <div>Student Id: @ParentStudent.StudentId</div>
+        <div>Parent Id: @ParentStudent.ParentId</div>
+        <div>@Html.ActionLink("Delete", "Delete", "DevParentStudent", new { sid = @ParentStudent.StudentId, pid=@ParentStudent.ParentId }, new { @class = "btn btn-danger" })</div>
+        <hr />
+    }
+}

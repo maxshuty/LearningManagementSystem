@@ -1,0 +1,43 @@
+﻿@using BootcampLMS.Models
+@using BootcampLMS.UI.Models
+@model List<BootcampLMS.Models.UnassignedUser>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin Dashboard</h2>
+<br />
+<h3>Unassigned Users</h3>
+<h4>@Html.ActionLink("Search for users", "SearchResults")</h4>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table table-bordered table-striped table-hover">
+            <tr>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Suggested Role
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => user.LastName)</td>
+                    <td>@Html.DisplayFor(m => user.FirstName)</td>
+                    <td>@Html.DisplayFor(m => user.Email)</td>
+                    <td>@Html.DisplayFor(m => user.RequestedRole)</td>
+                    <td>@Html.ActionLink("Details", "Details", "Admin", new {id = @user.UserId}, null)</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

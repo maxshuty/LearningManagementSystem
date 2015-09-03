@@ -1,0 +1,28 @@
+﻿@model BootcampLMS.UI.Models.StudentDashboardVM
+@{
+    ViewBag.Title = "Grades";
+}
+
+<h3>Grades for @Model.Name</h3>
+<div class="panel panel-default">
+    <div class="panel panel-body">
+
+        @foreach (var item in Model.myTableItemList)
+        {
+            <table class="table table-striped">
+                <tr>
+                    <td>
+                        <h4>@Html.DisplayFor(model => item.CourseName)</h4>
+                    </td>
+                    <td>
+                        <h4>@Html.DisplayFor(model => item.PercentGrade)</h4>
+                    </td>
+                    <td>
+                        <button class="btn btn-default"> @Html.ActionLink("View Assignments", "Assignments", "Parent", new { courseid = item.CourseId, userid = Model.UserId }, null)</button>
+                    </td>
+                </tr>
+            </table>
+        }
+
+    </div>
+</div>

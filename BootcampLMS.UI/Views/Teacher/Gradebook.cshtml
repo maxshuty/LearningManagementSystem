@@ -1,0 +1,25 @@
+﻿@model BootcampLMS.UI.Models.GradebookViewModel
+
+@{
+    ViewBag.Title = "Gradebook";
+}
+
+<h2>Gradebook</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.MyAssignmentViewModels) {
+    foreach (var listy in item)
+    {
+        <div>@listy.AssignmentName</div>
+        <div>@listy.EarnedPoints / @listy.PointsPossible</div>
+    }
+}
+
+</table>

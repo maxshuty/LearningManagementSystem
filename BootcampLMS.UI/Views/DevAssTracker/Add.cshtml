@@ -1,0 +1,30 @@
+﻿@model BootcampLMS.Models.AssignmentTracker
+
+@{
+    ViewBag.Title = "AddAssignment";
+}
+
+<h2>AddCourse</h2>
+
+<div>
+    @using (Html.BeginForm("Add", "DevAssTracker", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.AssignmentId)
+            @Html.DropDownListFor(m => m.AssignmentId, new SelectList(BootcampLMS.UI.Controllers.DevAssTrackerController.AllAssignmentIds, new {@class = "form-control"}))
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.RosterId)
+            @Html.DropDownListFor(m => m.RosterId, new SelectList(BootcampLMS.UI.Controllers.DevAssTrackerController.AllRosterIds, new {@class = "form-control"}))
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.EarnedPoints)
+            @Html.TextBoxFor(m => m.EarnedPoints)
+        </div>
+    
+        <div class="form-control">
+            <button type="submit" class="btn">Click me hard</button>
+        </div>
+
+    }
+</div>

@@ -1,0 +1,34 @@
+﻿@using BootcampLMS.UI.Models
+@using Microsoft.AspNet.Identity
+@using System.Net.Http
+
+@model List<string>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2 align="center">Bootcamp Learning Management System (LMS)</h2>
+
+@if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+{
+    if (Model.Count() > 1)
+    {
+        <p>Welcome! Please select a dashboard from the navbar.</p>
+    }
+    else if (!Model.Any())
+    {
+        <p>Waiting for your account to be approved.</p>
+    }
+    
+}
+else
+{
+    <div class="col-xs-6">
+        @{ Html.RenderPartial("Login"); };
+    </div>
+
+    <div class="col-xs-6">
+        @{ Html.RenderPartial("Register");}
+    </div>
+}

@@ -1,0 +1,37 @@
+﻿@model BootcampLMS.UI.Models.UserDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="panel panel-default">
+    <div class="panel panel-body">
+        @using (Html.BeginForm("SaveDetails", "Dev", FormMethod.Post))
+        {
+            <div class="form-group">
+                <div>@Html.LabelFor(m => m.LastName)</div>
+                <div>@Html.TextBoxFor(m => m.LastName)</div>
+            </div>
+            <div class="form-group">
+                <div>@Html.LabelFor(m => m.FirstName)</div>
+                <div>@Html.TextBoxFor(m => m.FirstName)</div>
+            </div>
+            <div class="form-group">
+                <div>@Html.LabelFor(m => m.GradeLevel)</div>
+                <div>@Html.DropDownListFor(m => m.GradeLevel, EnumHelper.GetSelectList(typeof(BootcampLMS.UI.Models.GradeLevels)), new { @class = "form-control" })</div>
+            </div>
+            <div class="form-group">
+                <div>@Html.CheckBoxFor(m => m.ParentRole) Parent</div>
+                <div>@Html.CheckBoxFor(m => m.StudentRole) Student</div>
+                <div>@Html.CheckBoxFor(m => m.TeacherRole) Teacher</div>
+                <div>@Html.CheckBoxFor(m => m.AdminRole) Admin</div>
+            </div>
+            @Html.HiddenFor(m => m.UserId)
+            <div class="form-group">
+                <button type="submit">Save</button>
+            </div>
+        }
+    </div>
+</div>

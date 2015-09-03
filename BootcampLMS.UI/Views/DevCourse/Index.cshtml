@@ -1,0 +1,21 @@
+﻿@model List<BootcampLMS.Models.Course>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Course Index</h2>
+
+@if (Model != null)
+{
+    foreach (var course in Model)
+    {
+        <div>@course.Name</div>
+        <div>@course.Department</div>
+        <div>@course.CourseDescription</div>
+        <div>@course.StartDate - @course.EndDate</div>
+        <div>Taught by: @course.TeacherId</div>
+        <div>@Html.ActionLink("Delete", "Delete", "DevCourse", new {id = @course.CourseId}, new {@class = "btn btn-danger"})</div>
+        <div>@Html.ActionLink("Edit", "Edit", "DevCourse", new {id = @course.CourseId}, new {@class = "btn btn-primary"})</div>
+        <hr/>
+    }
+}

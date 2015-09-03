@@ -1,0 +1,41 @@
+﻿@model BootcampLMS.Models.Assignment
+
+@{
+    ViewBag.Title = "EditAssignment";
+}
+
+<h2>Edit User</h2>
+
+<h3>Dev Asignment Control Panel</h3>
+<sub>Dev Usage Only</sub>
+
+<div>
+    @using (Html.BeginForm("Edit", "DevAssignment", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.CourseId)
+            @Html.TextBoxFor(m => m.CourseId)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.AssignmentDescription)
+            @Html.TextBoxFor(m => m.AssignmentDescription)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.DueDate)
+            @Html.TextBoxFor(m => m.DueDate)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PointsPossible)
+            @Html.TextBoxFor(m => m.PointsPossible)
+        </div>
+        @Html.HiddenFor(m => m.AssignmentId)
+        <div class="form-group">
+            <button type="submit">Add Edited Asignment To Database</button>
+        </div>
+    }
+</div>
+

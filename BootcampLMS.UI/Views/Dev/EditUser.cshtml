@@ -1,0 +1,40 @@
+﻿@model BootcampLMS.Models.UserProfile
+
+@{
+    ViewBag.Title = "EditUser";
+}
+
+<h2>Edit User</h2>
+
+<h3>Dev User Control Panel</h3>
+<sub>Dev Usage Only</sub>
+
+<div>
+    @using (Html.BeginForm("EditUser", "Dev", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserId)
+            @Html.TextBoxFor(m => m.UserId)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.RequestedRole)
+            @Html.TextBoxFor(m => m.RequestedRole)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.GradeLevel)
+            @Html.TextBoxFor(m => m.GradeLevel)
+        </div>
+        <div class="form-group">
+            <button type="submit">Add Edited User To Database</button>
+        </div>
+    }
+</div>
+

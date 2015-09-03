@@ -1,0 +1,53 @@
+﻿@using BootcampLMS.Models
+@using BootcampLMS.UI.Models
+
+@model RosterViewModel
+
+@{
+    ViewBag.Title = "Roster";
+}
+
+<h2>@Model.MyCourse.Name - Roster</h2>
+
+@Html.ActionLink("Information", "Information", "Teacher", new { id = Model.MyCourse.CourseId }, null) | @Html.ActionLink("Roster", "Roster", "Teacher", new { id = Model.MyCourse.CourseId }, null) | @Html.ActionLink("Gradebook", "Gradebook", "Teacher", new { courseid = Model.MyCourse.CourseId }, null)
+
+<div class="panel-body">
+
+    <div class="col-xs-6">
+        <h3>Roster</h3>
+        <div>
+            @{ Html.RenderPartial("RosterTable", Model.RosterTableViewModelList); }
+        </div>
+    </div>
+
+    <div class="col-xs-6">
+        <div>
+            <h3>Add Student</h3>
+            @{ Html.RenderPartial("RosterAddStudent", Model.AddStudent); }
+
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $('#searchBox').keyup(function() {
+            var valThis = $(this).val().toLowerCase();
+            $('.resultList>li').each(function() {
+                var text = $(this).text().toLowerCase();
+                (text.indexOf(valThis) >= 0) ? $(this).show() : $(this).hide();
+            });
+        });
+    </script>
+
+    <script>
+        $('#dropdownSearch').change(function () {
+            var gradeLevelSelected = $(this).val();
+            $('.resultList>li').each(function () {
+                var gradeLevel = $(this).attr("name");
+                (gradeLevel == gradeLevelSelected) ? $(this).show() : $(this).hide();
+            });
+        });
+    </script>
+
+}

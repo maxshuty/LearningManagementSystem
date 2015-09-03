@@ -1,0 +1,43 @@
+﻿@using System.Web.UI.WebControls
+@using BootcampLMS.UI.Models
+@model BootcampLMS.UI.Models.AddStudentViewModel
+
+<div class="vspace-2x-top">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="pull-left vspace-left">
+                    <label>Last Name</label>
+                    <div><input id="searchBox" type="text" /> </div>
+                </div>
+                <div align="center" class="col-xs-3">
+                    <label>Grade Level</label>
+                    @Html.DropDownList("GradeLevelDropDown", UiHelper.DropdownGradeLevels, new { @class = "form-control", @id = "dropdownSearch" })
+                </div>
+            </div>
+            <div class="row">
+                <br />
+                <div class="vspace-left">
+                    <h3>Results</h3>
+                    @if (Model.SearchResults != null)
+                    {
+                        <ul class="resultList">
+                            @foreach (var item in Model.SearchResults)
+                            {
+                            <li name="@item.GradeLevel">
+                                <p>@item.FirstName @item.LastName</p>
+                                <p id="gradeLevelDisplay">Grade Level: @item.GradeLevel</p>
+                            @Html.ActionLink("Add", "AddRoster", new { id = item.StudentId, courseid = Model.CourseId }, new { @class = "btn btn-primary", @style = "color:white" })
+                            <hr/>
+                            </li>
+                            }
+                        </ul>
+                    }
+                </div>
+                <div class="col-xs-12" align="center">
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

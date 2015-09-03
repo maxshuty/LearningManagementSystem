@@ -1,0 +1,5 @@
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Models\bin\Debug\BootcampLMS.Models.dll
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Models\bin\Debug\BootcampLMS.Models.pdb
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Models\obj\Debug\BootcampLMS.Models.dll
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Models\obj\Debug\BootcampLMS.Models.pdb
+C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Models\obj\Debug\BootcampLMS.Models.csprojResolveAssemblyReference.cache

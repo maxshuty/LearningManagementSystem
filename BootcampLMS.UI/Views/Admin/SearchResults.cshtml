@@ -1,0 +1,78 @@
+﻿@using System.Collections.Concurrent
+@using System.Web.UI.WebControls
+@using BootcampLMS.UI.Controllers
+@model BootcampLMS.UI.Models.UserSearchViewModel
+@{
+    ViewBag.Title = "SearchResults";
+}
+
+<h2>User Search</h2>
+<br />
+<div class="col-xs-12">
+    @using (Html.BeginForm("SearchResults", "Admin", FormMethod.Post))
+    {
+        <div class="panel panel-default">
+            <div class="panel panel-body">
+                <div class="center-block col-xs-2 vspace-2x-left">
+
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Last Name" })
+                </div>
+                <div class="center-block col-xs-2 vspace-2x-left">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "First Name" })
+                </div>
+                <div class="center-block col-xs-3 vspace-2x-left">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "E-mail" })
+                </div>
+                <div class="center-block col-xs-2 vspace-2x-left">
+                    @Html.DropDownListFor(m => m.RoleName, new SelectListItem[]
+                    {
+                        new SelectListItem {Text = "--Select Role--", Value = null},
+                        new SelectListItem {Text = "Admin", Value = "Admin"},
+                        new SelectListItem {Text = "Teacher", Value = "Teacher"},
+                        new SelectListItem {Text = "Parent", Value = "Parent"},
+                        new SelectListItem {Text = "Student", Value = "Student"}
+                    }, new { @class = "form-control" })
+                </div>
+                <button class="btn btn-default vspace-2x-left" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
+            </div>
+        </div>
+    }
+   @if (Model.SearchResults != null)
+   {
+       <table class="table table-striped table-hover table-bordered">
+           <tr>
+               <th>
+                   Last Name
+               </th>
+               <th>
+                   First Name
+               </th>
+               <th>
+                   Email
+               </th>
+               <th>Details</th>
+           </tr>
+           @if (Model.SearchResults != null)
+           {
+               foreach (var user in Model.SearchResults)
+               {
+
+                   <tr>
+                       <td>
+                           @Html.DisplayFor(m => user.LastName)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(m => user.FirstName)
+                       </td>
+                       <td>
+                           @Html.DisplayFor(m => user.Email)
+                       </td>
+                       <td>
+                           @Html.ActionLink("Details", "Details", "Admin", new {id = @user.UserId}, null)
+                       </td>
+                   </tr>
+               }
+           }
+       </table>
+   }
+</div>

@@ -1,0 +1,13 @@
+﻿@using BootcampLMS.Models
+@model List<BootcampLMS.Models.UserProfile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (Model != null)
+{
+    { Html.RenderPartial("GetAllUserProfile", Model);}
+}

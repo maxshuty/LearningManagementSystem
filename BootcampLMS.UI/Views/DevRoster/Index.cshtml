@@ -1,0 +1,19 @@
+﻿@model List<BootcampLMS.Models.Roster>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Roster Index</h2>
+
+@if (Model != null)
+{
+    foreach (var roster in Model)
+    {
+        <div>User Id: @roster.UserId</div>
+        <div>Course Id: @roster.CourseId</div>
+        <div>IsActive: @roster.IsActive</div>
+        <div>@Html.ActionLink("Delete", "Delete", "DevRoster", new { id = @roster.RosterId }, new { @class = "btn btn-danger" })</div>
+        <div>@Html.ActionLink("Edit", "Edit", "DevRoster", new { id = @roster.RosterId }, new { @class = "btn btn-primary" })</div>
+        <hr />
+    }
+}

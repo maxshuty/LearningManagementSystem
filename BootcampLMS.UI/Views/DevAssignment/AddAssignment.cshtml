@@ -1,0 +1,39 @@
+﻿@model BootcampLMS.Models.Assignment
+
+@{
+    ViewBag.Title = "AddAssignment";
+}
+
+<h2>AddAssignment</h2>
+
+<div>
+    @using (Html.BeginForm("AddAssignment", "DevAssignment", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.CourseId)
+            @Html.DropDownListFor(m => m.CourseId, new SelectList(BootcampLMS.UI.Controllers.DevAssignmentController.AllCourseIds), new {@class = "form-control"})
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.AssignmentDescription)
+            @Html.TextBoxFor(m => m.AssignmentDescription)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.DueDate)
+            @Html.TextBoxFor(m => m.DueDate)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PointsPossible)
+            @Html.TextBoxFor(m => m.PointsPossible)
+        </div>
+        <div class="form-group">
+            <button type="submit">Add Assignment to Database</button>
+        </div>
+    }
+</div>
+
+
+
