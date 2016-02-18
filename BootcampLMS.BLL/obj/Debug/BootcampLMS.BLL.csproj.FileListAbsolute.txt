@@ -1,0 +1,10 @@
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.BLL\bin\Debug\BootcampLMS.BLL.dll.config
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.BLL\bin\Debug\BootcampLMS.BLL.dll
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.BLL\bin\Debug\BootcampLMS.BLL.pdb
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.BLL\bin\Debug\EntityFramework.dll
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.BLL\bin\Debug\EntityFramework.xml
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.BLL\obj\Debug\BootcampLMS.BLL.csprojResolveAssemblyReference.cache
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.BLL\obj\Debug\BootcampLMS.BLL.dll
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.BLL\obj\Debug\BootcampLMS.BLL.pdb

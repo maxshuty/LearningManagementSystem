@@ -8,3 +8,13 @@ C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\bin\Debug\Dapp
 C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\obj\Debug\BootcampLMS.Data.csprojResolveAssemblyReference.cache
 C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\obj\Debug\BootcampLMS.Data.dll
 C:\Users\Andrew\Desktop\FinalProject\BootcampLMS\BootcampLMS.Data\obj\Debug\BootcampLMS.Data.pdb
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Data\bin\Debug\BootcampLMS.Data.dll
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Data\bin\Debug\BootcampLMS.Data.pdb
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Data\bin\Debug\BootcampLMS.Models.dll
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Data\bin\Debug\Dapper.dll
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Data\bin\Debug\BootcampLMS.Models.pdb
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Data\bin\Debug\Dapper.pdb
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Data\bin\Debug\Dapper.xml
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Data\obj\Debug\BootcampLMS.Data.csprojResolveAssemblyReference.cache
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Data\obj\Debug\BootcampLMS.Data.dll
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Data\obj\Debug\BootcampLMS.Data.pdb

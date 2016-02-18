@@ -1,0 +1,4 @@
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Tests\bin\Debug\BootcampLMS.Tests.dll
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Tests\bin\Debug\BootcampLMS.Tests.pdb
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Tests\obj\Debug\BootcampLMS.Tests.dll
+C:\Users\mposhusta\Desktop\LMS\Learning Management System\BootcampLMS.Tests\obj\Debug\BootcampLMS.Tests.pdb
